@@ -1,0 +1,23 @@
+artifact_path: file:///D:/MLOPS/ETE_wine_quality/mlruns/0/models/m-2d08cc6bd2ba47c38c0e7b99f2b1ffb1/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.19
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+    skops_trusted_types: null
+mlflow_version: 3.9.0
+model_id: m-2d08cc6bd2ba47c38c0e7b99f2b1ffb1
+model_size_bytes: 913
+model_uuid: m-2d08cc6bd2ba47c38c0e7b99f2b1ffb1
+prompts: null
+run_id: f9ce5544d67a403fb0679b72884aa43d
+utc_time_created: '2026-02-05 10:33:13.929220'
