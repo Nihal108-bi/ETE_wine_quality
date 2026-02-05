@@ -1,7 +1,7 @@
 from src.ETE_wine_quality import logger
 from src.ETE_wine_quality.pipeline.data_ingestion import DataIngestionTrainingPipeline
 from src.ETE_wine_quality.pipeline.data_validation_pipeline import DataValidatioTrainingPipeline
-
+from src.ETE_wine_quality.pipeline.data_transformation_pipeline import DataTransformationTrainingPipeline
 
 
 STAGE_NAME="Data Ingestion Stage"
@@ -17,8 +17,18 @@ except Exception as e:
 STAGE_NAME="Data Validaton Stage"
 try:
     logger.info(f">>>>>>>>>stage {STAGE_NAME} started <<<<<<<")
-    data_ingestion=DataValidatioTrainingPipeline()
-    data_ingestion.initiate_data_validation()
+    data_validation=DataValidatioTrainingPipeline()
+    data_validation.initiate_data_validation()
+    logger.info(f">>>>> stage {STAGE_NAME} completed <<<<<<\n\nx======x")
+except Exception as e:
+    logger.exception(e)
+    raise e  
+
+STAGE_NAME="Data Transformation Stage"
+try:
+    logger.info(f">>>>>>>>>stage {STAGE_NAME} started <<<<<<<")
+    data_transformation=DataTransformationTrainingPipeline()
+    data_transformation.initiate_data_transformation()
     logger.info(f">>>>> stage {STAGE_NAME} completed <<<<<<\n\nx======x")
 except Exception as e:
     logger.exception(e)
